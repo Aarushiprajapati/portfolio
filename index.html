@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aarushi | Anime Portfolio ✨</title>
+  <meta name="description" content="Aarushi's personal anime-themed portfolio — creative, vibrant, and full of life." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== CANVAS BACKGROUND PARTICLES ========== -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ========== FLOATING SAKURA PETALS ========== -->
+  <div class="sakura-container" id="sakuraContainer"></div>
+
+  <!-- ========== CURSOR SPARKLE ========== -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="cursor-trail-container" id="cursorTrail"></div>
+
+  <!-- ========== LOADING SCREEN ========== -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-kanji">
+        <span>ア</span><span>ア</span><span>ル</span><span>シ</span>
+      </div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar" id="loaderBar"></div>
+      </div>
+      <p class="loader-text">Loading your world...</p>
+    </div>
+  </div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-kanji">ア</span>
+      <span class="logo-name">Aarushi</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="nav-link active" data-en="Home" data-jp="ホーム">Home</a></li>
+      <li><a href="#about" class="nav-link" data-en="About" data-jp="について">About</a></li>
+      <li><a href="#gallery" class="nav-link" data-en="Gallery" data-jp="ギャラリー">Gallery</a></li>
+      <li><a href="#skills" class="nav-link" data-en="Skills" data-jp="スキル">Skills</a></li>
+      <li><a href="#contact" class="nav-link" data-en="Contact" data-jp="連絡">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" title="Toggle Language">JP / EN</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-image"></div>
+    <div class="hero-overlay"></div>
+
+    <!-- Animated kanji text layer -->
+    <div class="hero-kanji-rain" id="kanjiRain"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Open to new adventures ✨</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="title-line title-jp" data-text="アアルシ">アアルシ</span>
+        <span class="title-line title-en" id="heroName">Aarushi</span>
+      </h1>
+
+      <div class="hero-subtitle-wrap">
+        <span class="hero-subtitle-prefix">I am a </span>
+        <span class="hero-typewriter" id="typewriter"></span>
+        <span class="typewriter-cursor">|</span>
+      </div>
+
+      <p class="hero-desc">
+        Dreaming in pixels, living in stories — welcome to my world painted like an anime scene. 
+        Every frame tells a tale. Every moment, an adventure.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#gallery" class="btn btn-primary">
+          <span class="btn-icon">🌸</span>
+          <span>View Gallery</span>
+          <span class="btn-shine"></span>
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <span class="btn-icon">✉️</span>
+          <span>Say Hello</span>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-target="100">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Moments</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="50">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Adventures</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="1">0</span><span class="stat-plus"></span>
+          <span class="stat-label">Unique Story</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-character">
+      <div class="hero-character-glow"></div>
+      <img src="img1.jpg" alt="Aarushi Anime Character" class="character-img" id="heroChar" />
+      <div class="character-sparkles">
+        <span class="sparkle s1">✦</span>
+        <span class="sparkle s2">✧</span>
+        <span class="sparkle s3">✦</span>
+        <span class="sparkle s4">✧</span>
+        <span class="sparkle s5">⭐</span>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-dot"></div>
+      </div>
+      <span>Scroll down</span>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section class="about" id="about">
+    <div class="section-bg-blobs">
+      <div class="blob blob1"></div>
+      <div class="blob blob2"></div>
+    </div>
+
+    <div class="section-header">
+      <span class="section-tag">— My Story —</span>
+      <h2 class="section-title" data-jp="私について">About Me</h2>
+      <div class="section-underline"></div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-images">
+        <div class="about-img-main reveal-left">
+          <img src="img2.jpg" alt="Aarushi at city" />
+          <div class="img-frame"></div>
+          <div class="img-tag">✨ City Vibes</div>
+        </div>
+        <div class="about-img-secondary reveal-left" style="--delay:0.2s">
+          <img src="img3.jpg" alt="Aarushi casual" />
+          <div class="img-tag">🎯 Casual Mode</div>
+        </div>
+      </div>
+
+      <div class="about-content reveal-right">
+        <div class="about-quote">
+          <span class="quote-mark">"</span>
+          <p>Every story has a main character, and in mine — I choose to make every chapter extraordinary.</p>
+          <span class="quote-mark close">"</span>
+        </div>
+
+        <p class="about-text">
+          Hey there! I'm <strong>Aarushi</strong> — a dreamer, explorer, and creator. Like an anime protagonist, 
+          I believe every day holds an unexpected adventure. I pour my heart into everything I do, 
+          turning ordinary moments into extraordinary memories.
+        </p>
+
+        <p class="about-text">
+          From bustling city streets to quiet café corners, I find beauty in every frame of life. 
+          Inspired by the vivid worlds of anime, I live with passion, curiosity, and an unstoppable 
+          spirit ready to face any challenge.
+        </p>
+
+        <div class="about-traits">
+          <div class="trait-chip">🌸 Creative</div>
+          <div class="trait-chip">⚡ Ambitious</div>
+          <div class="trait-chip">🎯 Focused</div>
+          <div class="trait-chip">🌟 Dreamer</div>
+          <div class="trait-chip">🔥 Passionate</div>
+          <div class="trait-chip">🗺️ Explorer</div>
+        </div>
+
+        <div class="about-socials">
+          <a href="#" class="social-btn" title="Instagram">
+            <span>📷</span> Instagram
+          </a>
+          <a href="#" class="social-btn" title="Twitter">
+            <span>🐦</span> Twitter
+          </a>
+          <a href="#" class="social-btn" title="LinkedIn">
+            <span>💼</span> LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY SECTION ========== -->
+  <section class="gallery" id="gallery">
+    <div class="gallery-bg">
+      <img src="anime_hero_bg.png" alt="Gallery Background" class="gallery-bg-img" />
+      <div class="gallery-overlay"></div>
+    </div>
+
+    <div class="section-header light">
+      <span class="section-tag">— Moments Captured —</span>
+      <h2 class="section-title" data-jp="ギャラリー">My Gallery</h2>
+      <div class="section-underline"></div>
+    </div>
+
+    <!-- Gallery Filter -->
+    <div class="gallery-filter">
+      <button class="filter-btn active" data-filter="all">All ✨</button>
+      <button class="filter-btn" data-filter="adventure">Adventure 🗺️</button>
+      <button class="filter-btn" data-filter="lifestyle">Lifestyle 🌸</button>
+      <button class="filter-btn" data-filter="scenery">Scenery 🏯</button>
+    </div>
+
+    <div class="gallery-masonry" id="galleryGrid">
+      <div class="gallery-item" data-category="lifestyle" data-index="0">
+        <div class="gallery-card">
+          <img src="img1.jpg" alt="Serene garden moment" loading="lazy" />
+          <div class="gallery-card-overlay">
+            <h3>Garden Serenity 🌿</h3>
+            <p>A peaceful moment in a lush tropical garden</p>
+            <button class="gallery-expand" data-index="0">View ✦</button>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-category="adventure" data-index="1">
+        <div class="gallery-card">
+          <img src="img2.jpg" alt="City nightlife" loading="lazy" />
+          <div class="gallery-card-overlay">
+            <h3>City Lights 🏙️</h3>
+            <p>Exploring the vibrant city streets at dusk</p>
+            <button class="gallery-expand" data-index="1">View ✦</button>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-category="lifestyle" data-index="2">
+        <div class="gallery-card">
+          <img src="img3.jpg" alt="Casual moment" loading="lazy" />
+          <div class="gallery-card-overlay">
+            <h3>Casual Vibes #98 🏟️</h3>
+            <p>Just another day full of good energy</p>
+            <button class="gallery-expand" data-index="2">View ✦</button>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item" data-category="scenery" data-index="3">
+        <div class="gallery-card">
+          <img src="img4.jpg" alt="Anime scenery" loading="lazy" />
+          <div class="gallery-card-overlay">
+            <h3>Sakura Street 🌸</h3>
+            <p>Where every lane looks like an anime scene</p>
+            <button class="gallery-expand" data-index="3">View ✦</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <button class="lightbox-prev" id="lightboxPrev">‹</button>
+    <button class="lightbox-next" id="lightboxNext">›</button>
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightboxImg" />
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+    <div class="lightbox-dots" id="lightboxDots"></div>
+  </div>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section class="skills" id="skills">
+    <div class="skills-bg">
+      <img src="anime_skills_bg.png" alt="Skills Background" />
+      <div class="skills-overlay"></div>
+    </div>
+
+    <div class="section-header light">
+      <span class="section-tag">— Power Level —</span>
+      <h2 class="section-title" data-jp="スキル">My Skills</h2>
+      <div class="section-underline"></div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal-up" style="--delay:0s">
+        <div class="skill-icon">🎨</div>
+        <h3 class="skill-name">Creative Design</h3>
+        <p class="skill-desc">Crafting visuals that tell stories and spark emotions</p>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar" data-level="88">
+            <div class="skill-fill"></div>
+          </div>
+          <span class="skill-percent">88%</span>
+        </div>
+        <div class="skill-stars">★★★★☆</div>
+      </div>
+
+      <div class="skill-card reveal-up" style="--delay:0.1s">
+        <div class="skill-icon">📸</div>
+        <h3 class="skill-name">Photography</h3>
+        <p class="skill-desc">Capturing the perfect frame — every shot, a memory sealed</p>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar" data-level="92">
+            <div class="skill-fill"></div>
+          </div>
+          <span class="skill-percent">92%</span>
+        </div>
+        <div class="skill-stars">★★★★★</div>
+      </div>
+
+      <div class="skill-card reveal-up" style="--delay:0.2s">
+        <div class="skill-icon">✍️</div>
+        <h3 class="skill-name">Storytelling</h3>
+        <p class="skill-desc">Weaving words into worlds that readers live inside</p>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar" data-level="85">
+            <div class="skill-fill"></div>
+          </div>
+          <span class="skill-percent">85%</span>
+        </div>
+        <div class="skill-stars">★★★★☆</div>
+      </div>
+
+      <div class="skill-card reveal-up" style="--delay:0.3s">
+        <div class="skill-icon">🌐</div>
+        <h3 class="skill-name">Social Media</h3>
+        <p class="skill-desc">Building communities through authentic connections</p>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar" data-level="90">
+            <div class="skill-fill"></div>
+          </div>
+          <span class="skill-percent">90%</span>
+        </div>
+        <div class="skill-stars">★★★★★</div>
+      </div>
+
+      <div class="skill-card reveal-up" style="--delay:0.4s">
+        <div class="skill-icon">🎭</div>
+        <h3 class="skill-name">Content Creation</h3>
+        <p class="skill-desc">Turning ideas into engaging digital experiences</p>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar" data-level="87">
+            <div class="skill-fill"></div>
+          </div>
+          <span class="skill-percent">87%</span>
+        </div>
+        <div class="skill-stars">★★★★☆</div>
+      </div>
+
+      <div class="skill-card reveal-up" style="--delay:0.5s">
+        <div class="skill-icon">💡</div>
+        <h3 class="skill-name">Innovation</h3>
+        <p class="skill-desc">Always thinking ahead — the next chapter is unwritten</p>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar" data-level="95">
+            <div class="skill-fill"></div>
+          </div>
+          <span class="skill-percent">95%</span>
+        </div>
+        <div class="skill-stars">★★★★★</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ANIME QUOTE SECTION ========== -->
+  <section class="quote-section" id="quotes">
+    <div class="quote-bg-text">名言</div>
+    <div class="quote-carousel" id="quoteCarousel">
+      <div class="quote-slide active">
+        <p class="quote-text">"The world is not perfect. But it's there for us, doing the best it can... and that's what makes it so damn beautiful."</p>
+        <span class="quote-src">— Roy Mustang, Fullmetal Alchemist</span>
+      </div>
+      <div class="quote-slide">
+        <p class="quote-text">"No matter how deep the night, it always turns to day, eventually."</p>
+        <span class="quote-src">— Brook, One Piece</span>
+      </div>
+      <div class="quote-slide">
+        <p class="quote-text">"I want to be the kind of person who makes every moment matter."</p>
+        <span class="quote-src">— Aarushi's Motto ✨</span>
+      </div>
+      <div class="quote-slide">
+        <p class="quote-text">"Hard work is absolutely no match for talent. But if a talented person works hard, nothing can stop them."</p>
+        <span class="quote-src">— Kakashi Hatake, Naruto</span>
+      </div>
+    </div>
+    <div class="quote-controls">
+      <button class="quote-btn" id="quotePrev">‹</button>
+      <div class="quote-dots" id="quoteDots"></div>
+      <button class="quote-btn" id="quoteNext">›</button>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="contact" id="contact">
+    <div class="section-bg-blobs">
+      <div class="blob blob3"></div>
+      <div class="blob blob4"></div>
+    </div>
+
+    <div class="section-header">
+      <span class="section-tag">— Let's Connect —</span>
+      <h2 class="section-title" data-jp="連絡する">Get In Touch</h2>
+      <div class="section-underline"></div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal-left">
+        <div class="contact-character">
+          <img src="img3.jpg" alt="Aarushi waving" />
+          <div class="contact-char-glow"></div>
+          <div class="speech-bubble">
+            <p>Let's create something amazing together! ✨</p>
+          </div>
+        </div>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <div>
+              <span class="contact-label">Email</span>
+              <span class="contact-value">hello@aarushi.dev</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <span class="contact-label">Location</span>
+              <span class="contact-value">India 🇮🇳</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🎌</span>
+            <div>
+              <span class="contact-label">Anime Rank</span>
+              <span class="contact-value">S-Class Creator</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form reveal-right" id="contactForm">
+        <div class="form-header">
+          <h3>Send a Message 💌</h3>
+          <p>Like sending a letter in an anime — make it count.</p>
+        </div>
+
+        <div class="form-group">
+          <label for="nameInput">Your Name</label>
+          <input type="text" id="nameInput" name="name" placeholder="Enter your name..." required />
+          <span class="form-focus-bar"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="emailInput">Your Email</label>
+          <input type="email" id="emailInput" name="email" placeholder="your@email.com" required />
+          <span class="form-focus-bar"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="subjectInput">Subject</label>
+          <input type="text" id="subjectInput" name="subject" placeholder="What's this about?" />
+          <span class="form-focus-bar"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="messageInput">Your Message</label>
+          <textarea id="messageInput" name="message" rows="5" placeholder="Write your story here..."></textarea>
+          <span class="form-focus-bar"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary full-width" id="submitBtn">
+          <span class="btn-icon">🌸</span>
+          <span>Send Message</span>
+          <span class="btn-shine"></span>
+        </button>
+
+        <div class="form-success" id="formSuccess">
+          <span>✅</span> Message sent! I'll reply faster than light. ⚡
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-sakura"></div>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="logo-kanji large">ア</span>
+        <span>Aarushi</span>
+      </div>
+      <p class="footer-quote">生きることは、物語を書くこと — Living is writing a story</p>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="footer-copy">© 2026 Aarushi · Crafted with 🌸 & anime magic</p>
+    </div>
+  </footer>
+
+  <!-- ========== BACK TO TOP ========== -->
+  <button class="back-to-top" id="backToTop" title="Back to top">
+    <span>↑</span>
+    <span class="btt-sakura">🌸</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
